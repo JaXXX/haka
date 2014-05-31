@@ -5,13 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="29c29e012f244371a6bfe710efa2fd1e" Name="Diagram1">
-        <EntityTypeShape EntityType="bd_bankirModel.Good" Width="1.5" PointX="5.1918351935184726" PointY="9.3242074145582539" />
-        <EntityTypeShape EntityType="bd_bankirModel.Transaction" Width="1.5" PointX="5.9076054347248776" PointY="0.51547190570992973" />
-        <EntityTypeShape EntityType="bd_bankirModel.User" Width="1.5" PointX="11.824147280223736" PointY="23.523354839311612" />
+        <EntityTypeShape EntityType="bd_bankirModel.Good" Width="1.5" PointX="11.436697907483531" PointY="13.284970632421304" />
+        <EntityTypeShape EntityType="bd_bankirModel.Transaction" Width="1.5" PointX="11.195619245616543" PointY="3.1892382219383673" />
+        <EntityTypeShape EntityType="bd_bankirModel.User" Width="1.5" PointX="9.86195922543386" PointY="11.048410256881457" />
         <AssociationConnector Association="bd_bankirModel.FK__Goods__UserId__3A81B327" />
         <AssociationConnector Association="bd_bankirModel.FK_Transaction_0" />
         <AssociationConnector Association="bd_bankirModel.FK_Transaction_1" />
-        </Diagram>
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

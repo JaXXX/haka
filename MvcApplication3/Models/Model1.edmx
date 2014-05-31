@@ -41,6 +41,8 @@
           <Property Name="GoodsId" Type="bigint" Nullable="false" />
           <Property Name="Card" Type="nvarchar(max)" />
           <Property Name="Money" Type="money" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -111,7 +113,7 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Transaction" EntitySet="Transactions" />
           </AssociationSet>
-          </EntityContainer>
+        </EntityContainer>
         <EntityType Name="Good">
           <Key>
             <PropertyRef Name="Id" />
@@ -133,6 +135,8 @@
           <Property Type="Int64" Name="GoodsId" Nullable="false" />
           <Property Type="String" Name="Card" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="Decimal" Name="Money" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Phone" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Good" Relationship="bd_bankirModel.FK_Transaction_0" FromRole="Transaction" ToRole="Good" />
           <NavigationProperty Name="User" Relationship="bd_bankirModel.FK_Transaction_1" FromRole="Transaction" ToRole="User" />
         </EntityType>
@@ -206,6 +210,8 @@
           <EntitySetMapping Name="Transactions">
             <EntityTypeMapping TypeName="bd_bankirModel.Transaction">
               <MappingFragment StoreEntitySet="Transaction">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Money" ColumnName="Money" />
                 <ScalarProperty Name="Card" ColumnName="Card" />
                 <ScalarProperty Name="GoodsId" ColumnName="GoodsId" />

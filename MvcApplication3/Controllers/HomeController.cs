@@ -30,6 +30,15 @@ namespace MvcApplication3.Controllers
         }
 
         [Authorize]
+        public ActionResult Goods()
+        {
+            List<Good> Goods = _data.GetAllGood(1);
+            ViewBag.AllGood = Goods;
+            ViewBag.ActiveMenu = "Goods";
+            return View();
+        }
+
+        [Authorize]
         public ActionResult Profile()
         {
             ViewBag.ActiveMenu = "Profile";
@@ -43,18 +52,17 @@ namespace MvcApplication3.Controllers
             return View();
         }
 
-
+       
         public ActionResult MainPage()
         {
             ViewBag.ActiveMenu = "Support";
             return View();
         }
 
-        public ActionResult MainPage()
+        [Authorize]
+        public ActionResult Next()
         {
-            List<Good> Transaction = _data.GetAllGood();
-            ViewBag.AllGood = Transaction;
-            ViewBag.ActiveMenu = "Support";
+            ViewBag.ActiveMenu = "Next";
             return View();
         }
 

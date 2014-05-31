@@ -2,42 +2,44 @@
     ViewBag.Title = "History";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
- <center>
-<h1 style="margin-left: 12px;color:#686868; font-size: 20px">История продаж </h1>
+
+<center>
+<h1 style="color:#686868; font-size: 30px;margin-top: 20px;margin-bottom: 20px;font-weight: bold;">История продаж</h1>
  </center>
 
+
 @*<div class="container">*@
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-                        <th>
-                <center><p style="font-size: 18px;color:#686868">№</p></center>
+<table class="table table-bordered table-striped" >
+    <thead >
+        <tr style="background: #2C3742">
+            <th>
+                <center><p style="font-size: 20px;color:white;margin-bottom: 0px;">№</p></center>
             </th>
             <th>
-                <center><p style="font-size: 18px;color:#686868">Наименование</p></center>
+                <center><p style="font-size: 20px;color:white;margin-bottom: 0px;">Наименование</p></center>
             </th>
-            <th>    
-                <center><p style="font-size: 18px;color:#686868">Сумма</p></center>
+            <th>
+                <center><p style="font-size: 20px;color:white;margin-bottom: 0px;">Сумма</p></center>
             </th>
             <th @*style="width: 200px"*@>
-                <center><p style="font-size: 18px;color:#686868">Дата</p></center>
+                <center><p style="font-size: 20px;color:white;margin-bottom: 0px;">Дата</p></center>
             </th>
             <th>
-                <center><p style="font-size: 18px;color:#686868">Карта</p></center>
+                <center><p style="font-size: 20px;color:white;margin-bottom: 0px;">Карта</p></center>
             </th>
             <th>
-                <center><p style="font-size: 18px;color:#686868">Телефон</p></center>
+                <center><p style="font-size: 20px;color:white;margin-bottom: 0px;">Телефон</p></center>
             </th>
 
             <th>
-                <center><p style="font-size: 18px;color:#686868">Почта</p></center>
+                <center><p style="font-size: 20px;color:white;margin-bottom: 0px;">Почта</p></center>
             </th>
         </tr>
     </thead>
 
     <tbody>
-    @{
-        int a = 1;
+        @{
+            int a = 1;
         }
         @foreach (MvcApplication3.Models.Transaction all in ViewBag.Transaction)
         {
@@ -45,7 +47,7 @@
                 <td>
                     <center>
                     
-                        <p>
+                          <p style="font-size: 16px;margin-bottom: 0px;">
                             @a
                         </p>
                     </center>
@@ -53,48 +55,50 @@
                 <td>
                     <center>
                     
-                        <p>
+                        <a href="/home/goods" style="font-size: 16px;margin-bottom: 0px;">
                             @all.Good.Name
+                        </a>
+                    </center>
+                </td>
+                <td>
+                    <center>
+                         <p style="font-size: 16px;margin-bottom: 0px;">
+                           @all.Money.ToString("#,#").Replace(",", " ") <span>руб.</span> 
                         </p>
                     </center>
                 </td>
                 <td>
                     <center>
-                        <p>
-                           @all.Money.ToString("#,#").Replace(",", " ")
-                        </p>
-                    </center>
-                </td>
-                <td>
-                    <center>
-                        <p>
+                          <p style="font-size: 16px;margin-bottom: 0px;">
                             @all.Date
                         </p>
                     </center>
                 </td>
                 <td>
                     <center>
-                        <p>
+                          <p style="font-size: 16px;margin-bottom: 0px;">
                             @all.Card
                         </p>
                     </center>
                 </td>
                 <td>
                     <center>
-                        <p>
-                            @all.User.Phone
+                         <p style="font-size: 16px;margin-bottom: 0px;">
+                            @all.Phone
                         </p>
                     </center>
                 </td>
                 <td>
-                    <center> <p>
-                                   @all.User.Email
-                             </p></center>
+                    <center>
+                           <p style="font-size: 16px;margin-bottom: 0px;">
+                                     @all.Email
+                                 </p>
+                    </center>
                 </td>
             </tr>
             a = a + 1;
         }
-              
+
     </tbody>
 </table>
 @*    </div>*@

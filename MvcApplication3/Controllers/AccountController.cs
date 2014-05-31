@@ -38,7 +38,29 @@ namespace MvcApplication3.Controllers
             {
                 FormsAuthentication.SetAuthCookie(log, true);
             }
-            return RedirectToAction("History", "Home");
+            return RedirectToAction("Profile", "Home");
+        }
+
+
+        [HttpPost]
+        [AllowAnonymous]
+        //[ValidateAntiForgeryToken]
+        public ActionResult registered (string email, string name, string surname,  string phone, string password)
+        {
+            _data.registered(email, name, surname, phone, password);
+
+            if (_data.Validate(email, password) == true)
+            {
+                FormsAuthentication.SetAuthCookie(email, true);
+            }
+
+            return RedirectToAction("Next", "Home");
+        }
+
+        [AllowAnonymous]
+        public ActionResult Register()
+        {
+            return View();
         }
 
         //
@@ -51,5 +73,7 @@ namespace MvcApplication3.Controllers
 
             return RedirectToAction("MainPage", "Home");
         }
+
+
     }
 }

@@ -42,17 +42,18 @@
 <body class="container smart-style-2">
     <!-- possible classes: minified, fixed-ribbon, fixed-header, fixed-width-->
     <!-- HEADER -->
-    <header id="header"  style="height: 69px;">
+    <header id="header"  style="height: 80px; padding-left: 20px;">
         <div id="logo-group">
 
             <!-- PLACE YOUR LOGO HERE -->
-            <span id="logo" style="margin-top: 10px; color: white; font-size: 18px;"> <img src="~/img/qiwi3.png" alt="SmartAdmin" style="width: auto"> 
-                uPay
+            <span id="logo" style="margin-top: 10px; color: white; font-size: 18px;width: 80px"> <img src="~/img/qiwi3.png" alt="SmartAdmin" style="width: auto"> 
+                                                                                                
             </span>
+         @*   <span style="margin-top: 20px;color:white;font-size: 26px"> uPay </span>*@
             <!-- END LOGO PLACEHOLDER -->
             <!-- Note: The activity badge color changes when clicked and resets the number to 0
             Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-            <span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
+           @* <span id="activity" class="activity-dropdown" style="margin-top: 24px;float: right"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>*@
 
             <!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
             <div class="ajax-dropdown">
@@ -98,35 +99,7 @@
             </div>
             <!-- END AJAX-DROPDOWN -->
         </div>
-
-        <!-- projects dropdown -->
-        <div id="project-context">
-
-            <span class="label">Статус:</span>
-            <span id="project-selector" class="popover-trigger-element dropdown-toggle" data-toggle="dropdown">Продавец <i class="fa fa-angle-down"></i></span>
-
-            <!-- Suggestion: populate this list with fetch and push technique -->
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="javascript:void(0);">Online e-merchant management system - attaching integration with the iOS</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Notes on pipeline upgradee</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Assesment Report for merchant account</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
-                </li>
-            </ul>
-            <!-- end dropdown-menu-->
-
-        </div>
-        <!-- end projects dropdown -->
-        <!-- pulled right: nav area -->
-        <div class="pull-right">
+          <div class="pull-right" style="float: right">
 
             <!-- collapse menu button -->
           @*  <div id="hide-menu" class="btn-header pull-right">
@@ -135,7 +108,7 @@
             <!-- end collapse menu -->
             <!-- logout button -->
             <div id="logout" class="btn-header transparent pull-right">
-                <span> <a href="/account/logoff" title="Выход"><i class="fa fa-sign-out"></i></a> </span>
+                <span> <a href="/account/logoff" title="Выход" style="margin-top: 25px"><i class="fa fa-sign-out"></i></a> </span>
             </div>
             <!-- end logout button -->
             <!-- search mobile button (this is hidden till mobile view port) -->
@@ -172,16 +145,44 @@
             <!-- end multiple lang -->
 
         </div>
+        <!-- projects dropdown -->
+        <div id="project-context" style="float: right;margin-right: 10px">
+
+            <span class="label" style="margin-top: 16px">Статус:</span>
+            <span id="project-selector" class="popover-trigger-element dropdown-toggle" data-toggle="dropdown">Продавец <i class="fa fa-angle-down"></i></span>
+
+            <!-- Suggestion: populate this list with fetch and push technique -->
+            <ul class="dropdown-menu" style="margin-left: -100px">
+                <li>
+                    <a href="javascript:void(0);">Online e-merchant management system - attaching integration with the iOS</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">Notes on pipeline upgradee</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">Assesment Report for merchant account</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
+                </li>
+            </ul>
+            <!-- end dropdown-menu-->
+
+        </div>
+        <!-- end projects dropdown -->
+        <!-- pulled right: nav area -->
+      
         <!-- end pulled right: nav area -->
 
     </header>
     <!-- END HEADER -->
     <!-- Left panel : Navigation area -->
     <!-- Note: This width of the aside area can be adjusted through LESS variables -->
-    <aside id="left-panel" style="min-height: 500px; top: 69px;">
+    <aside id="left-panel" style="min-height: 500px; top:80px;">
 
         <!-- User info -->
-        <div class="login-info">
+        <div class="login-info" >
             <span>
                 <!-- User image size is adjusted inside CSS, it should stay as it -->
 

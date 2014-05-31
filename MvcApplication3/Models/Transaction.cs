@@ -20,6 +20,8 @@ namespace MvcApplication3.Models
         public long GoodsId { get; set; }
         public string Card { get; set; }
         public decimal Money { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
     
         public virtual Good Good { get; set; }
         public virtual User User { get; set; }

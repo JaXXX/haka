@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Goods";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center>
+    <h1 style="color:#686868; font-size: 30px;margin-top: 20px;margin-bottom: 20px;font-weight: bold;">Товары</h1>
+</center>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr style="background: #2C3742">
+            <th>
+                <center><p style="font-size: 20px;color:white;margin-bottom: 0px;">№</p></center>
+            </th>
+            <th>
+                <center><p style="font-size: 20px;color:white;margin-bottom: 0px;">Название</p></center>
+            </th>
+            <th>
+                <center><p style="font-size: 20px;color:white;margin-bottom: 0px;">Стоимость</p></center>
+            </th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            int a = 1;
+        }
+        @foreach (MvcApplication3.Models.Good all in ViewBag.AllGood)
+        {
+            <tr>
+                <td>
+                    <center>
+                    
+                          <p style="font-size: 16px;margin-bottom: 0px;">
+                            @a
+                        </p>
+                    </center>
+                </td>
+                <td>
+                    <center>
+                    
+                        <p style="font-size: 16px;margin-bottom: 0px;">
+                            @all.Name
+                        </p>
+                    </center>
+                </td>
+                <td>
+                    <center>
+                         <p style="font-size: 16px;margin-bottom: 0px;">
+                           @all.Price <span>руб.</span> 
+                        </p>
+                    </center>
+                </td>
+            
+            </tr>
+            a = a + 1;
+        }
+
+    </tbody>
+
+   @* <button type="btnsubmit"></button>*@
+
+
+    @*<div class="row" style="margin-left: 0px;width: 700px">
+
+    <div class="span1" style="width: 40px">
+        <span style="font-size: 16px; margin-bottom: 0px; width: 40px">1</span>
+    </div>
+
+ <div class="span3" style="width: 80px">
+    <span style="font-size: 16px; margin-bottom: 0px; width: 100px">Шорты</span>
+  </div>
+
+ <div class="span2" style="width: 60px">
+    <span style="font-size: 16px; margin-bottom: 0px; width: 100px">1000 руб.</span>
+</div>*@
+</table>
+

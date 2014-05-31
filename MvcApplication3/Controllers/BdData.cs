@@ -23,6 +23,21 @@ namespace MvcApplication3.Controllers
             return false;
         }
 
+
+        public void registered (string email, string name, string surname,  string phone, string password)
+        {
+
+            User user2 = new User();
+            user2.Login = email;
+            user2.Password = password;
+            user2.Name = name;
+            user2.SurName = surname;
+            user2.Phone = phone;
+            user2.Date = DateTime.Now;
+            _context.Users.Add(user2);
+            _context.SaveChanges();
+        }
+
         public List<Transaction> GetUserTransaction(long userId)
         {
             return _context.Transactions.Where(x => x.UserId == userId).ToList();
