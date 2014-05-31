@@ -248,6 +248,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\775.jpg" />
+    <Content Include="Images\7752.jpg" />
+    <Content Include="Images\77535.jpg" />
+    <Content Include="Images\7755.jpg" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -301,6 +305,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Calendar.cshtml" />
+    <Content Include="Views\Home\Targets.cshtml" />
+    <Content Include="Views\Home\ReportCosts.cshtml" />
+    <Content Include="Views\Home\Profile.cshtml" />
+    <Content Include="Views\Home\Hiatory.cshtml" />
+    <Content Include="Views\Home\Support.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

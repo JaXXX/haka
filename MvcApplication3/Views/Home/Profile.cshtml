@@ -1,0 +1,728 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div id="content">
+
+				<!-- Bread crumb is created dynamically -->
+				<!-- row -->
+				<div class="row">
+				
+					<!-- col -->
+ <header>
+                    @*    <span class="widget-icon"> <i class="fa fa-calendar"></i> </span>*@
+                        <h2 style="margin-left: 12px;"> Мой профиль </h2>
+                        <div class="widget-toolbar">
+                            <!-- add: non-hidden - to disable auto hide -->
+                            <div class="btn-group">
+                                <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
+                                    Период <i class="fa fa-caret-down"></i>
+                                </button>
+                                <ul class="dropdown-menu js-status-update pull-right">
+                                    <li>
+                                        <a href="javascript:void(0);" id="mt">Месяц</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" id="ag">Agenda</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" id="td">Сегодня</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+					<!-- end col -->
+				
+					<!-- right side of the page with the sparkline graphs -->
+					<!-- col -->
+					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+						<!-- sparks -->
+						<ul id="sparks">
+							<li class="sparks-info">
+								<h5> Мои деньги <span class="txt-color-blue">$47,171</span></h5>
+								<div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm"><canvas style="display: inline-block; width: 89px; height: 26px; vertical-align: top;" width="89" height="26"></canvas></div>
+							</li>
+							<li class="sparks-info">
+								<h5> Экономия <span class="txt-color-purple"><i title="Increased" data-rel="bootstrap-tooltip" class="fa fa-arrow-circle-up"></i>&nbsp;45%</span></h5>
+								<div class="sparkline txt-color-purple hidden-mobile hidden-md hidden-sm"><canvas style="display: inline-block; width: 82px; height: 26px; vertical-align: top;" width="82" height="26"></canvas></div>
+							</li>
+							<li class="sparks-info">
+								<h5> Количество расходов <span class="txt-color-greenDark"><i class="fa fa-shopping-cart"></i>&nbsp;2447</span></h5>
+								<div class="sparkline txt-color-greenDark hidden-mobile hidden-md hidden-sm"><canvas style="display: inline-block; width: 82px; height: 26px; vertical-align: top;" width="82" height="26"></canvas></div>
+							</li>
+						</ul>
+						<!-- end sparks -->
+					</div>
+					<!-- end col -->
+				
+				</div>
+				<!-- end row -->
+				
+				<!-- row -->
+				
+				<div class="row">
+				
+					<div class="col-sm-12">
+				
+				
+							<div class="well well-sm">
+				
+								<div class="row">
+				
+									<div class="span">
+										<div class="well well-light well-sm no-margin no-padding">
+				
+											<div class="row">
+				
+												<div class="col-sm-12">
+													<div class="carousel fade profile-carousel" id="myCarousel">
+														<div class="air air-bottom-right padding-10">
+															<a class="btn txt-color-white bg-color-teal btn-sm" href="javascript:void(0);"><i class="fa fa-check"></i> Follow</a>&nbsp; <a class="btn txt-color-white bg-color-pinkDark btn-sm" href="javascript:void(0);"><i class="fa fa-link"></i> Connect</a>
+														</div>
+														<div class="air air-top-left padding-10">
+															<h4 class="txt-color-white font-md">Jan 1, 2014</h4>
+														</div>
+														<ol class="carousel-indicators">
+															<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+															<li class="" data-slide-to="1" data-target="#myCarousel"></li>
+															<li class="" data-slide-to="2" data-target="#myCarousel"></li>
+														</ol>
+														<div class="carousel-inner">
+															<!-- Slide 1 -->
+															<div class="item active">
+																<img alt="" src="~/img/demo/s1.jpg">
+															</div>
+															<!-- Slide 2 -->
+															<div class="item">
+																<img alt="" src="~/img/demo/s2.jpg">
+															</div>
+															<!-- Slide 3 -->
+															<div class="item">
+																<img alt="" src="~/img/demo/m3.jpg">
+															</div>
+														</div>
+													</div>
+												</div>
+				
+												<div class="col-sm-12">
+				
+													<div class="row">
+				
+														<div class="col-sm-3 profile-pic">
+															<img src="~/img/775.jpg">
+															<div class="padding-10">
+																<h4 class="font-md"><strong>1,543</strong>
+																<br>
+																<small>Followers</small></h4>
+																<br>
+																<h4 class="font-md"><strong>419</strong>
+																<br>
+																<small>Connections</small></h4>
+															</div>
+														</div>
+														<div class="col-sm-6">
+															<h1>Евгений <span class="semi-bold">Ященко</span>
+															<br>
+															<small> Admin</small></h1>
+				
+															<ul class="list-unstyled">
+																<li>
+																	<p class="text-muted">
+																		<i class="fa fa-phone"></i>&nbsp;&nbsp;(<span class="txt-color-darken">313</span>) <span class="txt-color-darken">464</span> - <span class="txt-color-darken">6473</span>
+																	</p>
+																</li>
+																<li>
+																	<p class="text-muted">
+																		<i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:simmons@smartadmin">ceo@smartadmin.com</a>
+																	</p>
+																</li>
+																<li>
+																	<p class="text-muted">
+																		<i class="fa fa-skype"></i>&nbsp;&nbsp;<span class="txt-color-darken">john12</span>
+																	</p>
+																</li>
+																<li>
+																	<p class="text-muted">
+																		<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">Free after <a data-original-title="Create an Appointment" data-placement="top" title="" rel="tooltip" href="javascript:void(0);">4:30 PM</a></span>
+																	</p>
+																</li>
+															</ul>
+															<br>
+															<p class="font-md">
+																<i>A little about me...</i>
+															</p>
+															<p>
+				
+																Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
+																cumque nihil impedit quo minus id quod maxime placeat facere
+				
+															</p>
+															<br>
+															<a class="btn btn-default btn-xs" href="javascript:void(0);"><i class="fa fa-envelope-o"></i> Send Message</a>
+															<br>
+															<br>
+				
+														</div>
+														<div class="col-sm-3">
+															<h1><small>Connections</small></h1>
+															<ul class="list-inline friends-list">
+																<li><img alt="friend-1" src="~/img/avatars/1.png">
+																</li>
+																<li><img alt="friend-2" src="~/img/avatars/2.png">
+																</li>
+																<li><img alt="friend-3" src="~/img/avatars/3.png">
+																</li>
+																<li><img alt="friend-4" src="~/img/avatars/4.png">
+																</li>
+																<li><img alt="friend-5" src="~/img/avatars/5.png">
+																</li>
+																<li><img alt="friend-6" src="~/img/avatars/male.png">
+																</li>
+																<li>
+																	<a href="javascript:void(0);">413 more</a>
+																</li>
+															</ul>
+				
+															<h1><small>Recent visitors</small></h1>
+															<ul class="list-inline friends-list">
+																<li><img alt="friend-1" src="~/img/avatars/male.png">
+																</li>
+																<li><img alt="friend-2" src="~/img/avatars/female.png">
+																</li>
+																<li><img alt="friend-3" src="~/img/avatars/female.png">
+																</li>
+															</ul>
+				
+														</div>
+				
+													</div>
+				
+												</div>
+				
+											</div>
+				
+											<div class="row">
+				
+												<div class="col-sm-12">
+				
+													<hr>
+				
+													<div class="padding-10">
+				
+														<ul class="nav nav-tabs tabs-pull-right">
+															<li class="active">
+																<a data-toggle="tab" href="#a1">Recent Articles</a>
+															</li>
+															<li>
+																<a data-toggle="tab" href="#a2">New Members</a>
+															</li>
+															<li class="pull-left">
+																<span class="margin-top-10 display-inline"><i class="fa fa-rss text-success"></i> Activity</span>
+															</li>
+														</ul>
+				
+														<div class="tab-content padding-top-10">
+															<div id="a1" class="tab-pane fade in active">
+				
+																<div class="row">
+				
+																	<div class="col-xs-2 col-sm-1">
+																		<time class="icon" datetime="2014-09-20">
+																			<strong>Jan</strong>
+																			<span>10</span>
+																		</time>
+																	</div>
+				
+																	<div class="col-xs-10 col-sm-11">
+																		<h6 class="no-margin"><a href="javascript:void(0);">Allice in Wonderland</a></h6>
+																		<p>
+																			Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi Nam eget dui.
+																			Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero,
+																			sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel.
+																		</p>
+																	</div>
+				
+																	<div class="col-sm-12">
+				
+																		<hr>
+				
+																	</div>
+				
+																	<div class="col-xs-2 col-sm-1">
+																		<time class="icon" datetime="2014-09-20">
+																			<strong>Jan</strong>
+																			<span>10</span>
+																		</time>
+																	</div>
+				
+																	<div class="col-xs-10 col-sm-11">
+																		<h6 class="no-margin"><a href="javascript:void(0);">World Report</a></h6>
+																		<p>
+																			Morning our be dry. Life also third land after first beginning to evening cattle created let subdue you'll winged don't Face firmament.
+																			You winged you're was Fruit divided signs lights i living cattle yielding over light life life sea, so deep.
+																			Abundantly given years bring were after. Greater you're meat beast creeping behold he unto She'd doesn't. Replenish brought kind gathering Meat.
+																		</p>
+																	</div>
+				
+																	<div class="col-sm-12">
+				
+																		<br>
+				
+																	</div>
+				
+																</div>
+				
+															</div>
+															<div id="a2" class="tab-pane fade">
+				
+																<div class="alert alert-info fade in">
+																	<button data-dismiss="alert" class="close">
+																		×
+																	</button>
+																	<i class="fa-fw fa fa-info"></i>
+																	<strong>51 new members </strong>joined today!
+																</div>
+				
+																<div title="email@company.com" class="user">
+																	<img src="~/img/avatars/female.png"><a href="javascript:void(0);">Jenn Wilson</a>
+																	<div class="email">
+																		travis@company.com
+																	</div>
+																</div>
+																<div title="email@company.com" class="user">
+																	<img src="~/img/avatars/male.png"><a href="javascript:void(0);">Marshall Hitt</a>
+																	<div class="email">
+																		marshall@company.com
+																	</div>
+																</div>
+																<div title="email@company.com" class="user">
+																	<img src="~/img/avatars/male.png"><a href="javascript:void(0);">Joe Cadena</a>
+																	<div class="email">
+																		joe@company.com
+																	</div>
+																</div>
+																<div title="email@company.com" class="user">
+																	<img src="~/img/avatars/male.png"><a href="javascript:void(0);">Mike McBride</a>
+																	<div class="email">
+																		mike@company.com
+																	</div>
+																</div>
+																<div title="email@company.com" class="user">
+																	<img src="~/img/avatars/male.png"><a href="javascript:void(0);">Travis Wilson</a>
+																	<div class="email">
+																		travis@company.com
+																	</div>
+																</div>
+																<div title="email@company.com" class="user">
+																	<img src="~/img/avatars/male.png"><a href="javascript:void(0);">Marshall Hitt</a>
+																	<div class="email">
+																		marshall@company.com
+																	</div>
+																</div>
+																<div title="Joe Cadena joe@company.com" class="user">
+																	<img src="~/img/avatars/male.png"><a href="javascript:void(0);">Joe Cadena</a>
+																	<div class="email">
+																		joe@company.com
+																	</div>
+																</div>
+																<div title="email@company.com" class="user">
+																	<img src="~/img/avatars/male.png"><a href="javascript:void(0);">Mike McBride</a>
+																	<div class="email">
+																		mike@company.com
+																	</div>
+																</div>
+																<div title="email@company.com" class="user">
+																	<img src="~/img/avatars/male.png"><a href="javascript:void(0);">Marshall Hitt</a>
+																	<div class="email">
+																		marshall@company.com
+																	</div>
+																</div>
+																<div title="email@company.com" class="user">
+																	<img src="~/img/avatars/male.png"><a href="javascript:void(0);">Joe Cadena</a>
+																	<div class="email">
+																		joe@company.com
+																	</div>
+																</div>
+																<div title="email@company.com" class="user">
+																	<img src="~/img/avatars/male.png"><a href="javascript:void(0);"> Mike McBride</a>
+																	<div class="email">
+																		mike@company.com
+																	</div>
+																</div>
+				
+																<div class="text-center">
+																	<ul class="pagination pagination-sm">
+																		<li class="disabled">
+																			<a href="javascript:void(0);">Prev</a>
+																		</li>
+																		<li class="active">
+																			<a href="javascript:void(0);">1</a>
+																		</li>
+																		<li>
+																			<a href="javascript:void(0);">2</a>
+																		</li>
+																		<li>
+																			<a href="javascript:void(0);">3</a>
+																		</li>
+																		<li>
+																			<a href="javascript:void(0);">...</a>
+																		</li>
+																		<li>
+																			<a href="javascript:void(0);">99</a>
+																		</li>
+																		<li>
+																			<a href="javascript:void(0);">Next</a>
+																		</li>
+																	</ul>
+																</div>
+				
+															</div><!-- end tab -->
+														</div>
+				
+													</div>
+				
+												</div>
+				
+											</div>
+											<!-- end row -->
+				
+										</div>
+				
+									</div>
+									<div class="span">
+				
+										<form onsubmit="return false;" class="well padding-bottom-10" method="post">
+											<textarea placeholder="What are you thinking?" class="form-control" rows="2"></textarea>
+											<div class="margin-top-10">
+												<button class="btn btn-sm btn-primary pull-right" type="submit">
+													Post
+												</button>
+												<a title="" data-placement="bottom" rel="tooltip" class="btn btn-link profile-link-btn" href="javascript:void(0);" data-original-title="Add Location"><i class="fa fa-location-arrow"></i></a>
+												<a title="" data-placement="bottom" rel="tooltip" class="btn btn-link profile-link-btn" href="javascript:void(0);" data-original-title="Add Voice"><i class="fa fa-microphone"></i></a>
+												<a title="" data-placement="bottom" rel="tooltip" class="btn btn-link profile-link-btn" href="javascript:void(0);" data-original-title="Add Photo"><i class="fa fa-camera"></i></a>
+												<a title="" data-placement="bottom" rel="tooltip" class="btn btn-link profile-link-btn" href="javascript:void(0);" data-original-title="Add File"><i class="fa fa-file"></i></a>
+											</div>
+										</form>
+				
+										<span class="timeline-seperator text-center"> <span>10:30PM January 1st, 2013</span>
+											<div class="btn-group pull-right">
+												<a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="caret single"></span></a>
+												<ul class="dropdown-menu text-left">
+													<li>
+														<a href="javascript:void(0);">Hide this post</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);">Hide future posts from this user</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);">Mark as spam</a>
+													</li>
+												</ul>
+											</div> </span>
+										<div class="chat-body no-padding profile-message">
+											<ul>
+												<li class="message">
+													<img class="online" src="~/img/7755.jpg">
+													<span class="message-text"> <a class="username" href="javascript:void(0);">Евгений Ященко <small class="text-muted pull-right ultra-light"> 2 Minutes ago </small></a> Can't divide were divide fish forth fish to. Was can't form the, living life grass darkness very
+														image let unto fowl isn't in blessed fill life yielding above all moved </span>
+													<ul class="list-inline font-xs">
+														<li>
+															<a class="text-info" href="javascript:void(0);"><i class="fa fa-reply"></i> Reply</a>
+														</li>
+														<li>
+															<a class="text-danger" href="javascript:void(0);"><i class="fa fa-thumbs-up"></i> Like</a>
+														</li>
+														<li>
+															<a class="text-muted" href="javascript:void(0);">Show All Comments (14)</a>
+														</li>
+														<li>
+															<a class="text-primary" href="javascript:void(0);">Edit</a>
+														</li>
+														<li>
+															<a class="text-danger" href="javascript:void(0);">Delete</a>
+														</li>
+													</ul>
+												</li>
+												<li class="message message-reply">
+													<img class="online" src="img/avatars/3.png">
+													<span class="message-text"> <a class="username" href="javascript:void(0);">Serman Syla</a> Haha! Yeah I know what you mean. Thanks for the file Sadi! <i class="fa fa-smile-o txt-color-orange"></i> </span>
+				
+													<ul class="list-inline font-xs">
+														<li>
+															<a class="text-muted" href="javascript:void(0);">1 minute ago </a>
+														</li>
+														<li>
+															<a class="text-danger" href="javascript:void(0);"><i class="fa fa-thumbs-up"></i> Like</a>
+														</li>
+													</ul>
+				
+												</li>
+												<li class="message message-reply">
+													<img class="online" src="img/avatars/4.png">
+													<span class="message-text"> <a class="username" href="javascript:void(0);">Sadi Orlaf </a> Haha! Yeah I know what you mean. Thanks for the file Sadi! <i class="fa fa-smile-o txt-color-orange"></i> </span>
+				
+													<ul class="list-inline font-xs">
+														<li>
+															<a class="text-muted" href="javascript:void(0);">a moment ago </a>
+														</li>
+														<li>
+															<a class="text-danger" href="javascript:void(0);"><i class="fa fa-thumbs-up"></i> Like</a>
+														</li>
+													</ul>
+													<input type="text" placeholder="Type and enter" class="form-control input-xs">
+												</li>
+											</ul>
+				
+										</div>
+				
+										<span class="timeline-seperator text-center"> <span>11:30PM November 27th, 2013</span>
+											<div class="btn-group pull-right">
+												<a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="caret single"></span></a>
+												<ul class="dropdown-menu text-left">
+													<li>
+														<a href="javascript:void(0);">Hide this post</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);">Hide future posts from this user</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);">Mark as spam</a>
+													</li>
+												</ul>
+											</div> </span>
+										<div class="chat-body no-padding profile-message">
+											<ul>
+												<li class="message">
+													<img class="online" src="~/img/avatars/1.png">
+													<span class="message-text"> <a class="username" href="javascript:void(0);">Евгений Ященко <small class="text-muted pull-right ultra-light"> 2 Minutes ago </small></a> Can't divide were divide fish forth fish to. Was can't form the, living life grass darkness very image let unto fowl isn't in blessed fill life yielding above all moved </span>
+													<ul class="list-inline font-xs">
+														<li>
+															<a class="text-info" href="javascript:void(0);"><i class="fa fa-reply"></i> Reply</a>
+														</li>
+														<li>
+															<a class="text-danger" href="javascript:void(0);"><i class="fa fa-thumbs-up"></i> Like</a>
+														</li>
+														<li>
+															<a class="text-muted" href="javascript:void(0);">Show All Comments (14)</a>
+														</li>
+														<li>
+															<a class="text-primary" href="javascript:void(0);">Hide</a>
+														</li>
+													</ul>
+												</li>
+												<li class="message message-reply">
+													<img class="online" src="img/avatars/3.png">
+													<span class="message-text"> <a class="username" href="javascript:void(0);">Serman Syla</a> Haha! Yeah I know what you mean. Thanks for the file Sadi! <i class="fa fa-smile-o txt-color-orange"></i> </span>
+				
+													<ul class="list-inline font-xs">
+														<li>
+															<a class="text-muted" href="javascript:void(0);">1 minute ago </a>
+														</li>
+														<li>
+															<a class="text-danger" href="javascript:void(0);"><i class="fa fa-thumbs-up"></i> Like</a>
+														</li>
+													</ul>
+				
+												</li>
+												<li class="message message-reply">
+													<img class="online" src="img/avatars/4.png">
+													<span class="message-text"> <a class="username" href="javascript:void(0);">Sadi Orlaf </a> Haha! Yeah I know what you mean. Thanks for the file Sadi! <i class="fa fa-smile-o txt-color-orange"></i> </span>
+				
+													<ul class="list-inline font-xs">
+														<li>
+															<a class="text-muted" href="javascript:void(0);">a moment ago </a>
+														</li>
+														<li>
+															<a class="text-danger" href="javascript:void(0);"><i class="fa fa-thumbs-up"></i> Like</a>
+														</li>
+													</ul>
+				
+												</li>
+												<li class="message message-reply">
+													<img class="online" src="img/avatars/4.png">
+													<span class="message-text"> <a class="username" href="javascript:void(0);">Sadi Orlaf </a> Haha! Yeah I know what you mean. Thanks for the file Sadi! <i class="fa fa-smile-o txt-color-orange"></i> </span>
+				
+													<ul class="list-inline font-xs">
+														<li>
+															<a class="text-muted" href="javascript:void(0);">a moment ago </a>
+														</li>
+														<li>
+															<a class="text-danger" href="javascript:void(0);"><i class="fa fa-thumbs-up"></i> Like</a>
+														</li>
+													</ul>
+				
+												</li>
+												<li>
+													<div class="input-group wall-comment-reply">
+														<input type="text" placeholder="Type your message here..." class="form-control" id="btn-input">
+														<span class="input-group-btn">
+															<button id="btn-chat" class="btn btn-primary">
+																<i class="fa fa-reply"></i> Reply
+															</button> </span>
+													</div>
+												</li>
+											</ul>
+				
+										</div>
+				
+				
+									</div>
+								</div>
+				
+							</div>
+				
+				
+					</div>
+				
+				</div>
+				
+				<!-- end row -->
+
+			</div>
+
+
+
+
+
+    		<!-- END MAIN PANEL -->
+
+		<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+		Note: These tiles are completely responsive,
+		you can add as many as you like
+		-->
+		<div id="shortcut">
+			<ul>
+				<li>
+					<a href="#inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+				</li>
+				<li>
+					<a href="#gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
+				</li>
+				<li>
+					<a href="#invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
+				</li>
+			</ul>
+		</div>
+		<!-- END SHORTCUT AREA -->
+
+		<!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="~/js/plugin/pace/pace.min.js"></script>
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script>
+		    if (!window.jQuery) {
+		        document.write('<script src="~/js/libs/jquery-2.0.2.min.js"><\/script>');
+		    }
+		</script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script>
+		    if (!window.jQuery.ui) {
+		        document.write('<script src="~/js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+		    }
+		</script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+
+		<!-- BOOTSTRAP JS -->
+		<script src="~/js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="~/js/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="~/js/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="~/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+		<script src="~/js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="~/js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="~/js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="~/js/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="~/js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="~/js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- FastClick: For mobile devices -->
+		<script src="~/js/plugin/fastclick/fastclick.js"></script>
+
+		<!--[if IE 7]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+		<!-- Demo purpose only -->
+		<script src="~/js/demo.js"></script>
+
+		<!-- MAIN APP JS FILE -->
+		<script src="~/js/app.js"></script>
+
+		<!-- PAGE RELATED PLUGIN(S) 
+		<script src="..."></script>-->
+
+		
+
+		<script type="text/javascript">
+
+		    // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+		    $(document).ready(function () {
+
+		        pageSetUp();
+
+
+
+
+
+
+		    })
+
+		</script>
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script type="text/javascript">
+		    var _gaq = _gaq || [];
+		    _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+		    _gaq.push(['_trackPageview']);
+
+		    (function () {
+		        var ga = document.createElement('script');
+		        ga.type = 'text/javascript';
+		        ga.async = true;
+		        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		        var s = document.getElementsByTagName('script')[0];
+		        s.parentNode.insertBefore(ga, s);
+		    })();
+
+		</script>

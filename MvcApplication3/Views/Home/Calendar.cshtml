@@ -1,0 +1,375 @@
+﻿
+@{
+    ViewBag.Title = "Calendar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+
+        <!-- row -->
+
+        <div class="row">
+
+            <article class="col-sm-12 col-md-12 col-lg-12">
+
+                <!-- new widget -->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-3" data-widget-colorbutton="false">
+
+                    <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="true"
+                    data-widget-sortable="false"
+
+                    -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
+                        <h2> Календарь </h2>
+                        <div class="widget-toolbar">
+                            <!-- add: non-hidden - to disable auto hide -->
+                            <div class="btn-group">
+                                <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
+                                    Период <i class="fa fa-caret-down"></i>
+                                </button>
+                                <ul class="dropdown-menu js-status-update pull-right">
+                                    <li>
+                                        <a href="javascript:void(0);" id="mt">Месяц</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" id="ag">Agenda</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" id="td">Сегодня</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+
+                            <input class="form-control" type="text">
+
+                        </div>
+                        <!-- end widget edit box -->
+
+                        <div class="widget-body no-padding">
+                            <!-- content goes here -->
+                            <div class="widget-body-toolbar">
+
+                                <div id="calendar-buttons">
+
+                                    <div class="btn-group">
+                                        <a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-prev"><i class="fa fa-chevron-left"></i></a>
+                                        <a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-next"><i class="fa fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="calendar"></div>
+
+                            <!-- end content -->
+                        </div>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <!-- new widget -->
+                <div class="jarviswidget jarviswidget-color-blueDark">
+                    <header>
+                        <h2> Добавить напоминание </h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <div class="widget-body">
+                            <!-- content goes here -->
+
+                            <form id="add-event-form">
+                                <fieldset>
+
+                                    <div class="form-group">
+                                        <label>Название</label>
+                                        <input type="text" placeholder="Назоваите напоминание" maxlength="40" name="title" id="title" class="form-control">
+                                    </div>
+                                    <br />
+                                    <div class="btn-group">
+                                        <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
+                                            Расход / Доход <i class="fa fa-caret-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu js-status-update pull-left">
+                                            <li>
+                                                <a href="javascript:void(0);" id="mt">Расход</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" id="ag">Доход</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <br/>
+                                    <br />
+                                    <div class="form-group">
+                                        <label>Дата</label>
+                                        <input type="text" placeholder="Дата" value="31.05.2014" maxlength="40" name="title" id="title" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Описание</label>
+                                        <textarea id="description" maxlength="40" rows="3" placeholder="Опишите напоминание" class="form-control"></textarea>
+                                        <p class="note">Описание не больше 40 символов</p>
+                                    </div>
+
+
+                                </fieldset>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button id="add-event" type="button" class="btn btn-default">
+                                                Запланировать
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <!-- end content -->
+                        </div>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </div>
+        </div>
+
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->
+@section js
+{
+    <script>
+        $(document).ready(function () {
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+            //pageSetUp();
+
+            
+
+            /*
+             * FULL CALENDAR JS
+             */
+
+            if ($("#calendar").length) {
+                var date = new Date();
+                var d = date.getDate();
+                var m = date.getMonth();
+                var y = date.getFullYear();
+
+                var calendar = $('#calendar').fullCalendar({
+
+                    editable: true,
+                    draggable: true,
+                    selectable: false,
+                    selectHelper: true,
+                    unselectAuto: false,
+                    disableResizing: false,
+                    header: {
+                        left: 'title', //,today
+                        center: 'prev, next, today',
+                        right: 'month, agendaWeek, agenDay' //month, agendaDay,
+                    },
+                    select: function (start, end, allDay) {
+                        var title = prompt('Event Title:');
+                        if (title) {
+                            calendar.fullCalendar('renderEvent', {
+                                title: title,
+                                start: start,
+                                end: end,
+                                allDay: allDay
+                            }, true // make the event "stick"
+                            );
+                        }
+                        calendar.fullCalendar('unselect');
+                    },
+
+                    events: [{
+                        title: 'Обед 250р',
+                        start: new Date(y, m, 1),
+                        className: ["event", "bg-color-greenLight"],
+                        icon: 'fa-check'
+                    },
+                    {
+                        title: 'Обед 250р',
+                        start: new Date(y, m, 2),
+                        className: ["event", "bg-color-greenLight"],
+                        icon: 'fa-check'
+                    },
+                    {
+                        title: 'Обед 250р',
+                        start: new Date(y, m, 5),
+                        className: ["event", "bg-color-greenLight"],
+                        icon: 'fa-check'
+                    },
+                    {
+                        title: 'Обед 250р',
+                        start: new Date(y, m, 6),
+                        className: ["event", "bg-color-greenLight"],
+                        icon: 'fa-check'
+                    },
+                    {
+                        title: 'Обед 250р',
+                        start: new Date(y, m, 7),
+                        className: ["event", "bg-color-greenLight"],
+                        icon: 'fa-check'
+                    },
+                    {
+                        title: 'Бензин 870р',
+                        start: new Date(y, m, 4),
+                        className: ["event", "bg-color-greenLight"],
+                        icon: 'fa-check'
+                    },
+
+                    {
+                        title: 'Бензин 1 010р',
+                        start: new Date(y, m, 11),
+                        className: ["event", "bg-color-red"],
+                        icon: 'fa-lock'
+                    },
+                    {
+                        title: 'Обед 250р',
+                        start: new Date(y, m, 8),
+                        className: ["event", "bg-color-greenLight"],
+                        icon: 'fa-check'
+                    },
+                    {
+                        title: 'Обед 250р',
+                        start: new Date(y, m, 9),
+                        className: ["event", "bg-color-greenLight"],
+                        icon: 'fa-check'
+                    },
+                    {
+                        title: 'Обед 250р',
+                        start: new Date(y, m, 12),
+                        className: ["event", "bg-color-greenLight"],
+                        icon: 'fa-check'
+                    },
+                    {
+                        title: 'Аптека 560р',
+                        start: new Date(y, m, 12),
+                        className: ["event", "bg-color-greenLight"],
+                        icon: 'fa-check'
+                    },
+                    {
+                        title: 'Покупка iPhone 25 000р',
+                        start: new Date(y, m, 5),
+                        className: ["event", "bg-color-red"],
+                        icon: 'fa-lock'
+                    },
+                    {
+                        title: 'Продукты в Ашане 3 678р',
+                        start: new Date(y, m, 3),
+                        className: ["event", "bg-color-greenLight"],
+                        icon: 'fa-check'
+                    },
+                    {
+                        title: 'Продукты в Ашане 4 890р',
+                        start: new Date(y, m, 10),
+                        className: ["event", "bg-color-red"],
+                        icon: 'fa-check'
+                    },
+                    {
+                        title: 'Ресторан 2 780р',
+                        start: new Date(y, m, 2),
+                        className: ["event", "bg-color-red"],
+                        icon: 'fa-lock'
+                    },
+                    {
+                        title: 'Интернет 950р',
+                        start: new Date(y, m, 25),
+                        className: ["event", "bg-color-blue"],
+                        icon: 'fa-clock-o'
+                    }],
+
+                    eventRender: function (event, element, icon) {
+                        if (!event.description == "") {
+                            element.find('.fc-event-title').append("<br/><span class='ultra-light'>" + event.description + "</span>");
+                        }
+                        if (!event.icon == "") {
+                            element.find('.fc-event-title').append("<i class='air air-top-right fa " + event.icon + " '></i>");
+                        }
+                    }
+                });
+
+            };
+
+            /* hide default buttons */
+            $('.fc-header-right, .fc-header-center').hide();
+
+            // calendar prev
+            $('#calendar-buttons #btn-prev').click(function () {
+                $('.fc-button-prev').click();
+                return false;
+            });
+
+            // calendar next
+            $('#calendar-buttons #btn-next').click(function () {
+                $('.fc-button-next').click();
+                return false;
+            });
+
+            // calendar today
+            $('#calendar-buttons #btn-today').click(function () {
+                $('.fc-button-today').click();
+                return false;
+            });
+
+            // calendar month
+            $('#mt').click(function () {
+                $('#calendar').fullCalendar('changeView', 'month');
+            });
+
+            // calendar agenda week
+            $('#ag').click(function () {
+                $('#calendar').fullCalendar('changeView', 'agendaWeek');
+            });
+
+            // calendar agenda day
+            $('#td').click(function () {
+                $('#calendar').fullCalendar('changeView', 'agendaDay');
+            });
+
+
+        });
+
+    </script>
+}
