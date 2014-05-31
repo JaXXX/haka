@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
@@ -42,11 +46,11 @@
 <body class="container smart-style-2">
     <!-- possible classes: minified, fixed-ribbon, fixed-header, fixed-width-->
     <!-- HEADER -->
-    <header id="header"  style="height: 69px;">
+    <header id="header">
         <div id="logo-group">
 
             <!-- PLACE YOUR LOGO HERE -->
-            <span id="logo" style="margin-top: 10px; color: white; font-size: 18px;"> <img src="~/img/qiwi3.png" alt="SmartAdmin" style="width: auto"> 
+            <span id="logo" style="margin-top: 10px; color: white; font-size: 18px;"> <img src="~/img/qiwi3.png" alt="uPay" style="width: auto"> 
                 uPay
             </span>
             <!-- END LOGO PLACEHOLDER -->
@@ -102,8 +106,8 @@
         <!-- projects dropdown -->
         <div id="project-context">
 
-            <span class="label">Статус:</span>
-            <span id="project-selector" class="popover-trigger-element dropdown-toggle" data-toggle="dropdown">Продавец <i class="fa fa-angle-down"></i></span>
+            <span class="label">Projects:</span>
+            <span id="project-selector" class="popover-trigger-element dropdown-toggle" data-toggle="dropdown">Recent projects <i class="fa fa-angle-down"></i></span>
 
             <!-- Suggestion: populate this list with fetch and push technique -->
             <ul class="dropdown-menu">
@@ -129,13 +133,13 @@
         <div class="pull-right">
 
             <!-- collapse menu button -->
-          @*  <div id="hide-menu" class="btn-header pull-right">
+            <div id="hide-menu" class="btn-header pull-right">
                 <span> <a href="javascript:void(0);" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
-            </div>*@
+            </div>
             <!-- end collapse menu -->
             <!-- logout button -->
             <div id="logout" class="btn-header transparent pull-right">
-                <span> <a href="/account/logoff" title="Выход"><i class="fa fa-sign-out"></i></a> </span>
+                <span> <a href="login.html" title="Sign Out"><i class="fa fa-sign-out"></i></a> </span>
             </div>
             <!-- end logout button -->
             <!-- search mobile button (this is hidden till mobile view port) -->
@@ -144,16 +148,16 @@
             </div>
             <!-- end search mobile button -->
             <!-- input: search field -->
-          @*  <form action="#search.html" class="header-search pull-right">
+            <form action="#search.html" class="header-search pull-right">
                 <input type="text" placeholder="Find reports and more" id="search-fld">
                 <button type="submit">
                     <i class="fa fa-search"></i>
                 </button>
                 <a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
-            </form>*@
+            </form>
             <!-- end input: search field -->
             <!-- multiple lang dropdown : find all flags in the image folder -->
-          @*  <ul class="header-dropdown-list hidden-xs">
+            <ul class="header-dropdown-list hidden-xs">
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="~/img/flags/us.png"> <span> US </span> <i class="fa fa-angle-down"></i> </a>
                     <ul class="dropdown-menu pull-right">
@@ -168,7 +172,7 @@
                         </li>
                     </ul>
                 </li>
-            </ul>*@
+            </ul>
             <!-- end multiple lang -->
 
         </div>
@@ -178,107 +182,23 @@
     <!-- END HEADER -->
     <!-- Left panel : Navigation area -->
     <!-- Note: This width of the aside area can be adjusted through LESS variables -->
-    <aside id="left-panel" style="min-height: 500px; top: 69px;">
 
-        <!-- User info -->
-        <div class="login-info">
-            <span>
-                <!-- User image size is adjusted inside CSS, it should stay as it -->
 
-                <a href="javascript:void(0);" id="@*show-shortcut*@">
-                    <img src="~/img/77535.jpg" alt="me" class="online" style="border-left-width: 0px;"/>
-                    <span>
-                        Евгений
-                    </span>
-                    <i class="@*fa fa-angle-down*@"></i>
-                </a>
+    <div role="main" id="main">
 
-            </span>
+			<!-- MAIN CONTENT -->
+			<div class="container" id="content">
+
+				<div class="row">
+                        <div>
+            <a href="/account/login">Войти</ыa>
         </div>
-        <!-- end user info -->
-        <!-- NAVIGATION : This navigation is also responsive
+				
+				</div>
+			</div>
 
-        To make this navigation dynamic please make sure to link the node
-        (the reference to the nav > ul) after page load. Or the navigation
-        will not initialize.
-        -->
-        <nav>
-            <!-- NOTE: Notice the gaps after each icon usage <i></i>..
-            Please note that these links work a bit different than
-            traditional hre="" links. See documentation for details.
-            -->
-           
-            <ul>
-                <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "Profile" ? "active" : "")">
-                    <a href="@Url.Action("Profile","Home")" title="Мой профиль"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Мой профиль</span></a>
-                </li>
-                                <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "Goods" ? "active" : "")">
-                    <a href="@Url.Action("Goods","Home")" title="Товары"><i class="fa fa-lg fa-fw fa-calendar"></i> <span class="menu-item-parent">Товары</span></a>
-                </li>
-                <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "History" ? "active" : "")">
-                    <a href="@Url.Action("History","Home")" title="Новости"><i class="fa fa-lg fa-fw fa-calendar"></i> <span class="menu-item-parent">История продаж</span></a>
-                </li>
+		</div>
 
-                <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "Support" ? "active" : "")">
-                    <a href="@Url.Action("Support","Home")" title="Отчеты"><i class="fa fa-lg fa-fw fa-plus"></i> <span class="menu-item-parent">Отчеты</span></a>
-                </li>
-                                <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "Support" ? "active" : "")">
-                    <a href="@Url.Action("Support","Home")" title="Счета"><i class="fa fa-lg fa-fw fa-plus"></i> <span class="menu-item-parent">Поддержка</span></a>
-                </li>
-                
-                
-                @*               
-                <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "Index" ? "active" : "")">
-                    <a href="@Url.Action("Index","Home")" title="Новости"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Новости</span></a>
-                </li>
-                <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "Profile" ? "active" : "")">
-                    <a href="@Url.Action("Profile","Home")" title="Мой профиль"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Мой профиль</span></a>
-                </li>
-                <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "Accounts" ? "active" : "")">
-                    <a href="@Url.Action("Accounts","Home")" title="Счета"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Счета</span></a>
-                </li>*@
-
-                @*                <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "CategoryCosts" ? "active" : "")">
-                    <a href="@Url.Action("CategoryCosts", "Home")" title="Категории расходов"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Категории расходов</span></a>
-                </li>
-                <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "Budget" ? "active" : "")">
-                    <a href="@Url.Action("Budget", "Home")" title="Бюджет/Планирование"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Бюджет</span></a>
-                </li>*@
-                @*           <li>
-                    <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Отчеты</span></a>
-                    <ul>
-                        <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "ReportCosts" ? "active" : "")">
-                            <a href="@Url.Action("ReportCosts", "Home")">Расходы</a>
-                        </li>
-                        <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "ReportIncome" ? "active" : "")">
-                            <a href="@Url.Action("ReportIncome", "Home")">Доходы</a>
-                        </li>
-                        <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "ReportIncomeCosts" ? "active" : "")">
-                            <a href="@Url.Action("ReportIncomeCosts", "Home")">Расходы + Доходы</a>
-                        </li>
-                        <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "ReportAllTransaction" ? "active" : "")">
-                            <a href="@Url.Action("ReportAllTransaction", "Home")">Расходы</a>
-                        </li>
-                    </ul>
-                </li>*@
-                @*                <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "Targets" ? "active" : "")">
-                    <a href="@Url.Action("Targets", "Home")" title="Цели"><i class="fa fa-lg fa-fw fa-plus"></i> <span class="menu-item-parent">Цели</span></a>
-                </li>
-                <li class="@(ViewBag.ActiveMenu != null && ViewBag.ActiveMenu == "Calendar" ? "active" : "")">
-                    <a href="@Url.Action("Calendar", "Home")" title="Календарь"><i class="fa fa-lg fa-fw fa-calendar"></i> <span class="menu-item-parent">Календарь</span></a>
-                </li>*@
-            </ul>
-        </nav>
-        <span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
-
-    </aside>
-    <!-- END NAVIGATION -->
-    <!-- MAIN PANEL -->
-    <div id="main" role="main">
-
-        @RenderBody()
-
-    </div>
     <!-- END MAIN PANEL -->
     <!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
     Note: These tiles are completely responsive,
@@ -385,9 +305,6 @@
     <!-- Full Calendar -->
     <script src="~/js/plugin/fullcalendar/jquery.fullcalendar.min.js"></script>
     
-    @RenderSection("js", false)
-
-    @RenderSection("featured", required: false)
 
 </body>
 

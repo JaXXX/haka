@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcApplication3.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,11 +7,12 @@ using System.Web.Mvc;
 
 namespace MvcApplication3.Controllers
 {
-    //[Authorize]
+
     public class HomeController : Controller
     {
-        //BdData _data = new BdData();
+        BdData _data = new BdData();
 
+        [Authorize]
         public ActionResult Index()
         {
             ViewBag.ActiveMenu = "Index";
@@ -18,21 +20,23 @@ namespace MvcApplication3.Controllers
         }
 
 
-
-        public ActionResult Hiatory()
+        [Authorize]
+        public ActionResult History()
         {
-            ViewBag.ActiveMenu = "Hiatory";
+            List<Transaction> Transaction = _data.GetUserTransaction(1);
+            ViewBag.Transaction = Transaction;
+            ViewBag.ActiveMenu = "History";
             return View();
         }
 
-
+        [Authorize]
         public ActionResult Profile()
         {
             ViewBag.ActiveMenu = "Profile";
             return View();
         }
 
-
+        [Authorize]
         public ActionResult Support()
         {
             ViewBag.ActiveMenu = "Support";
@@ -40,74 +44,87 @@ namespace MvcApplication3.Controllers
         }
 
 
-
-        public ActionResult Accounts()
+        public ActionResult MainPage()
         {
-            ViewBag.ActiveMenu = "Accounts";
+            ViewBag.ActiveMenu = "Support";
             return View();
         }
 
-        public ActionResult CategoryCosts()
+        public ActionResult MainPage()
         {
-            ViewBag.ActiveMenu = "CategoryCosts";
+            List<Good> Transaction = _data.GetAllGood();
+            ViewBag.AllGood = Transaction;
+            ViewBag.ActiveMenu = "Support";
             return View();
         }
 
-        public ActionResult ReportCosts()
-        {
-            ViewBag.ActiveMenu = "ReportCosts";
-            return View();
-        }
+        //public ActionResult Accounts()
+        //{
+        //    ViewBag.ActiveMenu = "Accounts";
+        //    return View();
+        //}
 
-        public ActionResult ReportIncome()
-        {
-            ViewBag.ActiveMenu = "ReportIncome";
-            return View();
-        }
+        //public ActionResult CategoryCosts()
+        //{
+        //    ViewBag.ActiveMenu = "CategoryCosts";
+        //    return View();
+        //}
 
-        public ActionResult ReportIncomeCosts()
-        {
-            ViewBag.ActiveMenu = "ReportIncomeCosts";
-            return View();
-        }
+        //public ActionResult ReportCosts()
+        //{
+        //    ViewBag.ActiveMenu = "ReportCosts";
+        //    return View();
+        //}
 
-        public ActionResult Targets()
-        {
-            ViewBag.ActiveMenu = "Targets";
-            return View();
-        }
+        //public ActionResult ReportIncome()
+        //{
+        //    ViewBag.ActiveMenu = "ReportIncome";
+        //    return View();
+        //}
 
-        public ActionResult Calendar()
-        {
-            ViewBag.ActiveMenu = "Calendar";
-            return View();
-        }
+        //public ActionResult ReportIncomeCosts()
+        //{
+        //    ViewBag.ActiveMenu = "ReportIncomeCosts";
+        //    return View();
+        //}
 
-        public ActionResult ReportAllTransaction()
-        {
-            ViewBag.ActiveMenu = "ReportAllTransaction";
-            return View();
-        }
+        //public ActionResult Targets()
+        //{
+        //    ViewBag.ActiveMenu = "Targets";
+        //    return View();
+        //}
 
-        public ActionResult Budget()
-        {
-            ViewBag.ActiveMenu = "Budget";
-            return View();
-        }
+        //public ActionResult Calendar()
+        //{
+        //    ViewBag.ActiveMenu = "Calendar";
+        //    return View();
+        //}
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+        //public ActionResult ReportAllTransaction()
+        //{
+        //    ViewBag.ActiveMenu = "ReportAllTransaction";
+        //    return View();
+        //}
 
-            return View();
-        }
+        //public ActionResult Budget()
+        //{
+        //    ViewBag.ActiveMenu = "Budget";
+        //    return View();
+        //}
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+        //public ActionResult About()
+        //{
+        //    ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
+        //    return View();
+        //}
+
+        //public ActionResult Contact()
+        //{
+        //    ViewBag.Message = "Your contact page.";
+
+        //    return View();
+        //}
     }
 }
 
